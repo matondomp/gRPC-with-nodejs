@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message Category {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message ListCategories{
+    repeated Category categories = 1;
+}
+message empty {}
+
+service CategoryService {
+    rpc CreateCategory(Category) returns (Category) {}
+    rpc ListCategory(empty) returns (ListCategories) {}
+}
